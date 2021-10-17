@@ -23,7 +23,7 @@ export default function Home({data = [], state, setChange}) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const res = await fetch(`https://jargon-todo.herokuapp.com/api/notice/`)
   const data = await res.json()
   if (!data) {
