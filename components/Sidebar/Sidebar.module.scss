@@ -1,0 +1,50 @@
+.ContainerSidebar {
+  width: 370px;
+  height: 100vh;
+  background: #8d8c8c24;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  -webkit-user-select: none;
+  box-shadow: 0px 0px 7px 0px silver;
+  min-width: 430px;
+
+  .title {
+    margin-top: 60px;
+    font-size: 2rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+    svg {
+      opacity: 0.5;
+      margin-right: 1rem;
+    }
+  }
+  .blockItems {
+    margin-left: 4rem;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    width: 70%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .AddTodo {
+    cursor: pointer;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0.3;
+    transition: 0.3s ease-in-out;
+    svg {
+      margin-right: 1rem;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

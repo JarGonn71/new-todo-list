@@ -1,0 +1,67 @@
+.wrapperWindow {
+  width: 300px;
+  border-radius: 20px;
+  margin: 0;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  box-shadow: 0px 0px 7px 0px #a2a2a2;
+  z-index: 1000;
+  svg {
+    position: absolute;
+    transform: rotate(45deg);
+    top: -1rem;
+    right: -2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transform: rotate(45deg) scale(1.2);
+    }
+  }
+  input {
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 9px;
+    font-weight: 500;
+  }
+  .colorItems {
+    margin: 1rem 0;
+    display: flex;
+    width: 100%;
+  }
+
+  .color {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 0px #242323;
+    transition: transform 0.3s ease, border 0.1s;
+
+    &.active {
+      border: 1px solid black;
+      transform: scale(1.3);
+    }
+  }
+  .btn {
+    font-size: 1.5rem;
+    padding: 10px;
+    color: white;
+    background: green;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    cursor: pointer;
+  }
+}
