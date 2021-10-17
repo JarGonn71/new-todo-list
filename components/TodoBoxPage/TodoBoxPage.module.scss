@@ -25,6 +25,7 @@
     font-weight: 500;
     position: relative;
     height: 50px;
+    transition: 0.3s ease-in-out;
     input {
       outline: none;
       border: 0;
@@ -43,6 +44,7 @@
       background: grey;
     }
     svg {
+      transition: 0.3s ease-in-out;
       margin-right: 1rem;
       transform: translateY(4px);
     }
