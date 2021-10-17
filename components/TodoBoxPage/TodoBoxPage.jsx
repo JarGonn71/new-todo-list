@@ -13,7 +13,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
     //Получение свежих данных с сервера
     useEffect( async () => {
         try{
-            const rez = await axios.get(`http://localhost:5000/api/notice/${_id}`)
+            const rez = await axios.get(`https://jargon-todo.herokuapp.com/api/notice/${_id}`)
             setListTodo(rez.data.todo)
             setNewTitle(rez.data.title)
             setActiveColor(rez.data.color)
