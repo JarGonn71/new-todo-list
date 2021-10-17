@@ -1,7 +1,8 @@
 import Lauout from "../layout/Lauout"
-import styles from '../styles/Home.module.scss'
 import TodoBox from "../components/TodoBox/TodoBox"
-import {useEffect } from 'react';
+import {useEffect} from 'react';
+
+import styles from '../styles/Home.module.scss'
 
 export default function Home({data = [], state, setChange}) {
 

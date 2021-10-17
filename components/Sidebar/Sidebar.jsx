@@ -13,7 +13,6 @@ function Sidebar({state, setAddTodo}) {
     }
 
     const deleteTodo = async (id) => {
-        // const newState = state.filter(item => item._id != id)
         try{
             await axios.delete(`https://jargon-todo.herokuapp.com/api/notice/delete/${id}`).then(()=>{
                 router.push('/') 

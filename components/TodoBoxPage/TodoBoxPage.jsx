@@ -10,6 +10,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
     const [activeColor, setActiveColor] = useState(color)
     const [newTodoText, setNewTodoText] = useState('')
 
+    //Получение свежих данных с сервера
     useEffect( async () => {
         try{
             const rez = await axios.get(`http://localhost:5000/api/notice/${_id}`)
@@ -18,14 +19,14 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
             setActiveColor(rez.data.color)
           }catch(error){
               console.log(error)
-          }
-       
+          } 
       }, [change, todo])
 
     const changeTodo = () =>{
         setChange(prev=>!prev)
     }
 
+      //Изменение флажка progress
     const setProgress = (item) => {
         if(change){
             let newItem = {...item}
@@ -35,6 +36,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
         }
     }
 
+    //Изменение текста у TODO
     const setText = (item, value) => {
         if(value){
             let newItem = {...item}
@@ -45,11 +47,13 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
             
     }
 
+    //Удаление TODO
     const deleteTodo = (item) => {
         const options = todoList.filter(todoItem => todoList.indexOf(todoItem) != todoList.indexOf(item))
             setListTodo(options)
     }
 
+    //Добавление TODO
     const setAddTodoPage = () =>{
         if(newTodoText){
             setListTodo([ ...todoList, {text: newTodoText, progress: false}])
@@ -57,9 +61,8 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
         setNewTodoText('')
     }
 
-
+    //Изменение данных и отправка их на сервер
     const changeNotice = async () => {
-        
         const options = {
             title: newTitle,
             todo: todoList,
