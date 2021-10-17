@@ -10,6 +10,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
     const [activeColor, setActiveColor] = useState(color)
     const [newTodoText, setNewTodoText] = useState('')
 
+
     //Получение свежих данных с сервера
     useEffect( async () => {
         try{
@@ -17,6 +18,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
             setListTodo(rez.data.todo)
             setNewTitle(rez.data.title)
             setActiveColor(rez.data.color)
+            
           }catch(error){
               console.log(error)
           } 
@@ -92,7 +94,7 @@ export default function TodoBoxPage({_id, title, todo, color, setChange, change}
             <div className={styles.wrapper}>
                 <div style={{color: `${activeColor}`}} className={styles.title}>
                     <BsFillBookmarkStarFill color={`${activeColor}`}/>
-                    {!change? title :<input placeholder="Введите название" value={newTitle} onChange={(e)=>{setNewTitle(e.target.value)}} />}
+                    {!change? newTitle :<input placeholder="Введите название" value={newTitle} onChange={(e)=>{setNewTitle(e.target.value)}} />}
                     <div onClick={changeTodo} className={styles.btn}><BsPencilSquare/></div>
 
                 </div>
